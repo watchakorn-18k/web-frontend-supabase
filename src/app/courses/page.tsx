@@ -25,7 +25,7 @@ const Course = () => {
       {courseData.map((course: any) => (
         <div key={course.id}>
           <a href={`/courses/${course.id}`}>
-            {course.name ? course.name : "no name"}
+            {course.name ? `${course.id}. ${course.name}` : "no name"}
           </a>
         </div>
       ))}

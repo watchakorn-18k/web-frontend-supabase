@@ -5,13 +5,13 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Card from "../_components/card";
 
-const BASE_URL = process.env.BASE_URL;
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL + "/api";
 const Course = () => {
   const [courseData, setCourseData] = useState([]);
 
   const GetAllCourse = async () => {
     try {
-      const response = await axios.get(`http://localhost:8000/course`);
+      const response = await axios.get(`${BASE_URL}/course`);
       setCourseData(response.data.data);
       console.log("response", response.data.data);
     } catch (error) {
